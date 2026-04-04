@@ -1,5 +1,7 @@
 # docs.orcastration.ai
 
+[![Primary](https://github.com/jcuffney/docs.orcastration.ai/actions/workflows/primary.yml/badge.svg)](https://github.com/jcuffney/docs.orcastration.ai/actions/workflows/primary.yml) [![Release](https://github.com/jcuffney/docs.orcastration.ai/actions/workflows/deploy.yml/badge.svg)](https://github.com/jcuffney/docs.orcastration.ai/actions/workflows/deploy.yml)
+
 Documentation site for the Orca AI agent orchestration platform, built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.build).
 
 ## Setup

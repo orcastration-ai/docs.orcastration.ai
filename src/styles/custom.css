@@ -1,0 +1,39 @@
+/* ===========================================
+   Orca Docs — Custom Starlight Theme Overrides
+   Matches orcastration.ai visual identity
+   =========================================== */
+
+/* ---------- Dark mode ---------- */
+:root {
+  --sl-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --sl-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --sl-color-accent-low: hsl(185, 60%, 14%);
+  --sl-color-accent: hsl(185, 96%, 42%);
+  --sl-color-accent-high: hsl(185, 80%, 76%);
+
+  --sl-color-white: hsl(0, 0%, 100%);
+  --sl-color-gray-1: hsl(0, 0%, 73%);
+  --sl-color-gray-2: hsl(0, 0%, 53%);
+  --sl-color-gray-3: hsl(0, 0%, 40%);
+  --sl-color-gray-4: hsl(0, 0%, 27%);
+  --sl-color-gray-5: hsl(0, 0%, 13%);
+  --sl-color-gray-6: hsl(0, 0%, 7%);
+  --sl-color-black: hsl(0, 0%, 4%);
+}
+
+/* ---------- Light mode ---------- */
+:root[data-theme='light'] {
+  --sl-color-accent-low: hsl(185, 70%, 90%);
+  --sl-color-accent: hsl(185, 96%, 32%);
+  --sl-color-accent-high: hsl(185, 50%, 18%);
+
+  --sl-color-white: hsl(0, 0%, 4%);
+  --sl-color-gray-1: hsl(0, 0%, 18%);
+  --sl-color-gray-2: hsl(0, 0%, 33%);
+  --sl-color-gray-3: hsl(0, 0%, 50%);
+  --sl-color-gray-4: hsl(0, 0%, 70%);
+  --sl-color-gray-5: hsl(0, 0%, 90%);
+  --sl-color-gray-6: hsl(0, 0%, 96%);
+  --sl-color-black: hsl(0, 0%, 100%);
+}
