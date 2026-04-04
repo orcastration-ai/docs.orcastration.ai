@@ -3,7 +3,7 @@
    Matches orcastration.ai visual identity
    =========================================== */
 
-/* ---------- Dark mode ---------- */
+/* ---------- Dark mode (only mode) ---------- */
 :root {
   --sl-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --sl-font-mono: 'JetBrains Mono', ui-monospace, monospace;
@@ -22,18 +22,65 @@
   --sl-color-black: hsl(0, 0%, 4%);
 }
 
-/* ---------- Light mode ---------- */
-:root[data-theme='light'] {
-  --sl-color-accent-low: hsl(185, 70%, 90%);
-  --sl-color-accent: hsl(185, 96%, 32%);
-  --sl-color-accent-high: hsl(185, 50%, 18%);
+/* ---------- Header branding ---------- */
+.site-title {
+  font-family: 'JetBrains Mono', ui-monospace, monospace !important;
+  font-weight: 800 !important;
+  letter-spacing: -1px !important;
+  font-size: 1.15rem !important;
+  color: var(--sl-color-white) !important;
+}
 
-  --sl-color-white: hsl(0, 0%, 4%);
-  --sl-color-gray-1: hsl(0, 0%, 18%);
-  --sl-color-gray-2: hsl(0, 0%, 33%);
-  --sl-color-gray-3: hsl(0, 0%, 50%);
-  --sl-color-gray-4: hsl(0, 0%, 70%);
-  --sl-color-gray-5: hsl(0, 0%, 90%);
-  --sl-color-gray-6: hsl(0, 0%, 96%);
-  --sl-color-black: hsl(0, 0%, 100%);
+.site-title img {
+  width: 28px;
+  height: 28px;
+}
+
+/* ---------- Primary action buttons (hero, CTAs) ---------- */
+.sl-link-button.primary {
+  background: linear-gradient(135deg, #06B6D4, #0EA5E9) !important;
+  color: #000 !important;
+  border: 1px solid transparent !important;
+  border-radius: 8px !important;
+  font-family: 'JetBrains Mono', ui-monospace, monospace !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  padding: 12px 24px !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.2s ease !important;
+}
+
+.sl-link-button.primary:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 8px 30px color-mix(in oklch, #06B6D4 30%, transparent) !important;
+  opacity: 0.92 !important;
+}
+
+/* ---------- Secondary/minimal buttons ---------- */
+.sl-link-button.minimal {
+  background: transparent !important;
+  color: #888 !important;
+  border: 1px solid color-mix(in oklch, #888 30%, transparent) !important;
+  border-radius: 8px !important;
+  font-family: 'JetBrains Mono', ui-monospace, monospace !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  padding: 12px 24px !important;
+  transition: color 0.2s ease, border-color 0.2s ease !important;
+}
+
+.sl-link-button.minimal:hover {
+  color: #fff !important;
+  border-color: color-mix(in oklch, #888 50%, transparent) !important;
+}
+
+/* ---------- Social icons (GitHub) ---------- */
+.social-icons a {
+  color: #888 !important;
+  transition: color 0.2s ease !important;
+}
+
+.social-icons a:hover {
+  color: #fff !important;
 }

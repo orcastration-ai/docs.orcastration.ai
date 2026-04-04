@@ -6,7 +6,15 @@ export default defineConfig({
   site: 'https://docs.orcastration.ai',
   integrations: [
     starlight({
-      title: 'Orca Docs',
+      title: 'orca(stration).ai',
+      logo: {
+        src: './src/assets/orca-nav.svg',
+        alt: 'Orca logo',
+      },
+      components: {
+        ThemeSelect: './src/components/ThemeSelect.astro',
+        ThemeProvider: './src/components/ThemeProvider.astro',
+      },
       customCss: ['./src/styles/custom.css'],
       head: [
         {
@@ -29,7 +37,7 @@ export default defineConfig({
         {
           icon: 'github',
           label: 'GitHub',
-          href: 'https://github.com/jcuffney/docs.orcastration.ai',
+          href: 'https://github.com/jcuffney/orca',
         },
       ],
       sidebar: [

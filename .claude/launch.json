@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "docs-dev",
+      "env": {
+        "PATH": "/Users/jcuffney/.nvm/versions/node/v22.17.1/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+      },
+      "runtimeExecutable": "/Users/jcuffney/.nvm/versions/node/v22.17.1/bin/npx",
+      "runtimeArgs": ["astro", "dev"],
+      "port": 4321
+    }
+  ]
+}

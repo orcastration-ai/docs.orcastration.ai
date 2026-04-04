@@ -1,0 +1,40 @@
+<svg width="380" height="300" viewBox="65 85 380 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- MAIN ORCA BODY -->
+  <path d="
+    M110 300
+    C90 200, 200 120, 320 140
+    C420 160, 450 260, 360 310
+    C300 340, 220 340, 160 320
+    C130 310, 120 305, 110 300 Z"
+    fill="#FFFFFF"/>
+
+  <!-- DORSAL FIN -->
+  <path d="
+    M250 150
+    C240 90, 300 90, 310 150 Z"
+    fill="#FFFFFF"/>
+
+  <!-- TAIL -->
+  <path d="
+    M110 300
+    C70 320, 80 360, 140 350
+    C120 330, 115 310, 110 300 Z"
+    fill="#FFFFFF"/>
+
+  <!-- EYE PATCH (dark on white body) -->
+  <path d="
+    M250 210
+    C280 185, 330 195, 345 220
+    C320 235, 280 235, 250 210 Z"
+    fill="#0A0A0A"/>
+
+  <!-- CIRCULAR EYE -->
+  <circle cx="315" cy="220" r="6" fill="#FFFFFF"/>
+
+  <!-- CLEAN WAVE BASE -->
+  <path d="
+    M140 350
+    C260 300, 360 320, 430 360
+    C330 380, 240 385, 140 350 Z"
+    fill="#0EA5E9"/>
+</svg>
