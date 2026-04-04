@@ -1,0 +1,37 @@
+---
+title: Orca Docs
+description: Documentation for the Orca AI agent orchestration platform.
+template: splash
+hero:
+  tagline: Build, deploy, and orchestrate AI agent workflows.
+  actions:
+    - text: Get Started
+      link: /getting-started/installation/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/jcuffney/docs.orcastration.ai
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+  <Card title="Installation" icon="setting">
+    Get Orca set up in your environment.
+    [Install Orca](/getting-started/installation/)
+  </Card>
+  <Card title="Quickstart" icon="rocket">
+    Build your first agent workflow in minutes.
+    [Quickstart guide](/getting-started/quickstart/)
+  </Card>
+  <Card title="Guides" icon="open-book">
+    Learn how to create workflows and manage agents.
+    [Browse guides](/guides/creating-workflows/)
+  </Card>
+  <Card title="API Reference" icon="document">
+    Full reference for the Orca CLI and API.
+    [View reference](/reference/api/)
+  </Card>
+</CardGrid>
