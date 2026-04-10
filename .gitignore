@@ -16,3 +16,8 @@ coverage/
 # OS / editor
 .DS_Store
 *.log
+
+# Terraform
+.terraform/
+*.tfstate*
+terraform/environments/*.local.tfvars
