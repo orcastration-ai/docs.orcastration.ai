@@ -1,0 +1,65 @@
+name: Destroy
+
+# Inline destroy (instead of reusing fromtheforest-io/.github's reusable workflow)
+# because docs.orcastration.ai lives in the orcastration-ai org, which has
+# its own .github repo for shared workflows. Easier to keep this self-contained.
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target environment to destroy
+        required: true
+        type: choice
+        options: [dev, prod]
+      confirm:
+        description: Type 'destroy' to confirm
+        required: true
+        type: string
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: us-east-1
+  DEV_ACCOUNT_ID: "688365519974"
+  DEV_ROLE_ARN: "arn:aws:iam::688365519974:role/github-actions"
+  PROD_ACCOUNT_ID: "654158184354"
+  PROD_ROLE_ARN: "arn:aws:iam::654158184354:role/github-actions"
+
+jobs:
+  destroy:
+    name: Destroy (${{ inputs.environment }})
+    if: ${{ inputs.confirm == 'destroy' }}
+    runs-on: [self-hosted, linux, x64]
+    environment: ${{ inputs.environment == 'prod' && 'prod' || 'dev' }}
+    env:
+      AWS_ACCOUNT_ID: ${{ inputs.environment == 'prod' && '654158184354' || '688365519974' }}
+      AWS_ROLE_ARN: ${{ inputs.environment == 'prod' && 'arn:aws:iam::654158184354:role/github-actions' || 'arn:aws:iam::688365519974:role/github-actions' }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ env.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+      - uses: hashicorp/setup-terraform@v4
+        with:
+          terraform_version: "~1.5"
+          terraform_wrapper: false
+      - name: Empty S3 bucket before destroy
+        working-directory: terraform
+        run: |
+          terraform init \
+            -backend-config="bucket=orcastration-docs-orcastration-ai-tfstate-${{ env.AWS_ACCOUNT_ID }}" \
+            -backend-config="key=${{ inputs.environment }}/terraform.tfstate"
+          if bucket=$(terraform output -raw bucket_name 2>/dev/null); then
+            aws s3 rm "s3://${bucket}" --recursive || true
+          fi
+      - name: Terraform destroy
+        working-directory: terraform
+        run: |
+          terraform destroy -auto-approve \
+            -var-file="environments/${{ inputs.environment }}.tfvars" \
+            -var="aws_account_id=${{ env.AWS_ACCOUNT_ID }}" \
+            -input=false
