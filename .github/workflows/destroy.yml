@@ -32,7 +32,7 @@ jobs:
   destroy:
     name: Destroy (${{ inputs.environment }})
     if: ${{ inputs.confirm == 'destroy' }}
-    runs-on: [self-hosted, linux, x64]
+    runs-on: ubuntu-latest
     environment: ${{ inputs.environment == 'prod' && 'prod' || 'dev' }}
     env:
       AWS_ACCOUNT_ID: ${{ inputs.environment == 'prod' && '654158184354' || '688365519974' }}
